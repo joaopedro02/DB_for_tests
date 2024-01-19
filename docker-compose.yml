@@ -1,0 +1,29 @@
+version: "3.5"
+
+services:
+  # Install postgres and setup the student database.
+  postgres:
+    image: postgres:13.13
+    restart: always
+    # volumes:
+    #   - ./config/postgresql.conf:/etc/postgresql.conf
+    ports:
+      - 5434:5432
+    environment:
+      - POSTGRES_DB=testeDB
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    command: 
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
+
+#  # Install Elasticsearch.
+#   elasticsearch:
+#     container_name: elasticsearch
+#     image: docker.elastic.co/elasticsearch/elasticsearch:6.8.0
+#     environment:
+#     - discovery.type=single-node
+#     ports:
+#       - 9200:9200
+#       - 9300:9300
