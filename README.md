@@ -1,6 +1,6 @@
 # DB For tests
 
-Tools to help deploy a database populated with random data for tests purposes.
+Tools to help deploy a postgres database populated with random data for tests purposes.
 
 - It can be used to test CDC replication tools or pipelines.
 - Can be used to test batch replication pipelines. 
